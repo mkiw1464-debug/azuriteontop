@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azurite IOS External - Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #0a0a0a; color: white; font-family: sans-serif; }
+        .card { background-color: #121212; border: 1px solid #1f2937; border-radius: 1.5rem; }
+        .text-azurite { color: #2dd4bf; } /* Teal-400 */
+        .bg-azurite { background-color: #0f766e; } /* Teal-700 */
+    </style>
+</head>
+<body class="p-5 max-w-lg mx-auto">
+
+    <div class="flex items-center gap-2 mb-6">
+        <div class="w-3 h-3 bg-teal-500 rounded-full animate-pulse"></div>
+        <h1 class="text-2xl font-bold italic">Azurite IOS External</h1>
+    </div>
+    <p class="text-gray-500 text-sm mb-8 px-1 font-medium text-teal-900/80">Secure Access Panel</p>
+
+    <div class="card p-6 mb-4">
+        <p class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-3">Status</p>
+        <h2 class="text-xl font-bold mb-4">Logged</h2>
+        <hr class="border-gray-800 mb-4">
+        
+        <p class="text-xs font-bold text-gray-500 uppercase mb-1">Expiry in</p>
+        <p class="text-lg font-mono text-gray-300 mb-4">2026-05-10 00:04:58</p>
+        
+        <p class="text-xs font-bold text-gray-500 uppercase mb-1">Modo</p>
+        <p class="text-lg font-semibold text-azurite">Drag</p>
+    </div>
+
+    <div class="card p-6">
+        <p class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-3">Free Fire</p>
+        <h2 class="text-xl font-bold mb-6">Packages Status</h2>
+
+        <div class="mb-8">
+            <div class="flex justify-between items-center mb-4">
+                <span class="text-lg font-medium">Config Aim</span>
+                <span class="text-azurite font-bold">Drag</span>
+            </div>
+            
+            <div class="space-y-1 text-sm text-gray-500 italic mb-6">
+                <p>Configs disponibles:</p>
+                <p>Drag, Drag Antena, Original</p>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4">
+                <button class="bg-azurite hover:bg-teal-600 py-3 rounded-xl font-bold uppercase tracking-wider transition">Guardar</button>
+                <button class="bg-gray-800 hover:bg-gray-700 py-3 rounded-xl font-bold uppercase tracking-wider transition">Restore</button>
+            </div>
+        </div>
+
+        <hr class="border-gray-800 mb-6">
+
+        <div class="flex justify-between items-center">
+            <div>
+                <h3 class="text-lg font-bold uppercase tracking-tighter">Free Fire Max</h3>
+                <p class="text-[10px] text-gray-600">PKG:com.dts.freefiremax</p>
+            </div>
+            <span class="bg-green-900/30 text-green-500 text-[10px] font-bold px-3 py-1 rounded-full border border-green-900">Activo</span>
+        </div>
+    </div>
+
+    <script>
+        // Security check
+        if(localStorage.getItem("isLogged") !== "true") {
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>
