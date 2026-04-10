@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azurite IOS External - Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #050505; }
+        .azurite-gradient { background: linear-gradient(135deg, #0d9488 0%, #111827 100%); }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen p-4">
+    <div class="w-full max-w-md p-8 bg-gray-900 border border-teal-900/50 rounded-2xl shadow-2xl">
+        <div class="text-center mb-8">
+            <h1 class="text-3xl font-bold text-teal-400 tracking-tight">AZURITE <span class="text-white">IOS</span></h1>
+            <p class="text-gray-400 text-sm mt-2">Secure Access Panel External</p>
+        </div>
+
+        <div class="space-y-4">
+            <div>
+                <label class="block text-xs font-semibold text-teal-500 uppercase ml-1 mb-1">License Key</label>
+                <input type="text" id="keyInput" placeholder="Masukkan Key Anda..." 
+                    class="w-full bg-black border border-gray-800 text-white p-3 rounded-xl focus:outline-none focus:border-teal-500 transition">
+            </div>
+            
+            <button onclick="checkKey()" 
+                class="w-full azurite-gradient text-white font-bold py-3 rounded-xl hover:opacity-90 transition active:scale-95">
+                LOGIN ACCESS
+            </button>
+            
+            <p id="errorMessage" class="text-red-500 text-xs text-center hidden italic">Key tidak sah atau telah tamat tempoh!</p>
+        </div>
+    </div>
+
+    <script>
+        function checkKey() {
+            const key = document.getElementById('keyInput').value;
+            const error = document.getElementById('errorMessage');
+            
+            if(key === "AZURITEONTOP") {
+                // Simpan status login ringkas
+                localStorage.setItem("isLogged", "true");
+                window.location.href = "dashboard.html";
+            } else {
+                error.classList.remove('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
